@@ -1,0 +1,38 @@
+<App Theme="Basic">
+	<Font File="Assets/BebasNeue.otf" ux:Global="Bebas" />
+	
+	<Page>		
+	
+	<Image File="Assets/logo.png" Width="150" Alignment="TopCenter" Margin="0, 50, 0,0"/>
+	
+	<StackPanel Alignment="VerticalCenter">		
+	 	<DockPanel Margin="20,0,20,0">
+	 		<Text Dock="Left" Alignment="VerticalCenter">Username:</Text>
+	 		<TextInput Value="" Alignment="VerticalCenter"></TextInput>
+	 	</DockPanel>
+		<DockPanel Margin="20,0,20,0">
+	 		<Text Dock="Left" Alignment="VerticalCenter">Password:</Text>
+	 		<TextInput IsPassword="true" Value="" Alignment="VerticalCenter"></TextInput>
+	 	</DockPanel>
+	</StackPanel>
+
+    <Button ux:Class="SpecialButton" IgnoreStyle="true" ClipToBounds="False" Margin="10,0,10,20"  Name="sself" Height="50">
+    <Fuse.BasicTheme.ButtonText TextColor="#FFF" ux:Name="buttonTx" Font="RobotoMedium" Value="{Property sself.Text}" TextAlignment="Center"/>
+
+    <Rectangle Layer="Background" CornerRadius="25">
+      <SolidColor ux:Name="buttonBg" Color="#EF4141"/>
+    </Rectangle>
+
+    <WhileHovering>
+        <Change buttonBg.Color="#fff" Duration="0.3" Easing="CircularIn"/>
+        <Change buttonTx.TextColor="#000" Duration="0.3" Easing="CircularIn"/>
+    </WhileHovering>
+    
+    </Button>
+
+	
+<StackPanel Alignment="Bottom">
+	<SpecialButton Text="LOGIN"/>
+</StackPanel>
+</Page>
+</App>
